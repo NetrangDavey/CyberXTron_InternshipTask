@@ -4,7 +4,7 @@ from .models import Student,Courses
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model=Student
-        field="__all__"
+        fields='__all__'
     
     def create(self, validated_data):
         std=Student(**validated_data)
@@ -14,7 +14,7 @@ class StudentSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model=Courses
-        field="__all__"
+        fields='__all__'
     def create(self, validated_data):
         c=Courses(**validated_data)
         c.save()
